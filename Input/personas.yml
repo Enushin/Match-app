@@ -1,0 +1,716 @@
+# Match-app ターゲットペルソナ定義
+# 作成日: 2026-04-19
+# 対応: requirements.yml > vision.target_users
+
+personas:
+  # ────────────────────────────────────────────────
+  # ペルソナ1: フリーランスエンジニア/デザイナー
+  # ────────────────────────────────────────────────
+  - id: persona-1
+    role: freelancer
+    name: 中村 彩花（なかむら あやか）
+    tagline: 手数料と不透明さに疲れた、実力派フリーランスUI/UXデザイナー
+
+    demographics:
+      age: 32
+      gender: female
+      occupation: フリーランス UI/UXデザイナー
+      annual_income_range: 450万〜600万円
+      location: 東京都世田谷区（自宅作業中心）
+      family: 独身、猫1匹
+      education: 多摩美術大学 グラフィックデザイン学科卒
+      career_history: 制作会社3年 → Web系事業会社2年 → フリーランス4年目
+
+    lifestyle:
+      weekday: |
+        7:30 起床 → 8:00 SNS・Dribbble・Pinterestチェック
+        9:00-12:00 デザイン作業（Figma中心）
+        13:00-17:00 クライアントMTG・修正対応
+        18:00-20:00 スキルアップ（Udemy・技術記事）
+        21:00 noteで制作プロセスの発信
+      weekend: カフェでポートフォリオ整理、美術館巡り、デザインイベント参加
+      devices:
+        - MacBook Pro 14インチ（メイン）
+        - iPad Pro（ラフスケッチ）
+        - iPhone 15（SNS・連絡）
+      sns:
+        primary: [X/Twitter, Instagram, Dribbble]
+        secondary: [note, Threads]
+      media: [デザイン系Podcast, Figma公式ブログ, note]
+
+    psychographics:
+      work_values:
+        - 自分のデザインで課題を解決する実感
+        - クライアントとの直接コミュニケーション
+        - 時間と場所の自由
+      spending_habits: スキルアップ・ツール課金には積極投資。生活費は堅実
+      self_investment: 月1〜2万円（Figmaプラグイン、オンライン講座、書籍）
+      career_perspective: |
+        デザイン×戦略で上流から入れるデザイナーになりたい。
+        いずれは小さなデザインスタジオを持つのが夢。
+      fears:
+        - 案件が途切れて収入が不安定になること
+        - 価格競争に巻き込まれ、単価が下がること
+        - 年齢とともにトレンドについていけなくなること
+      desired_future: |
+        月単価50万円以上の案件を安定的に持ち、
+        自分が共感できるプロダクトのデザインに携わっている状態
+
+    challenges:
+      - description: 案件獲得チャネルの手数料が高い
+        severity: high
+        urgency: high
+        detail: |
+          Lancers・CrowdWorksで20%の手数料。
+          年間60〜100万円が手数料に消えている感覚。
+          クライアントの支払額と手取りのギャップが大きい。
+        current_solutions:
+          - クラウドソーシング（手数料に不満）
+          - SNS経由の直接受注（不安定）
+          - 知人紹介（数に限界）
+        frustrations:
+          - 手数料が高すぎる
+          - コンペ形式でタダ働きのリスク
+          - クライアントの質が読めない
+
+      - description: スキルに見合った単価の案件に出会えない
+        severity: high
+        urgency: medium
+        detail: |
+          UI/UX設計からプロトタイプまで一貫してできるのに、
+          「バナー作成5,000円」のような低単価案件ばかり表示される。
+          自分の実力を正しく評価してくれる場がない。
+        current_solutions:
+          - ポートフォリオサイトを充実させる
+          - noteでプロセス記事を書いて発信
+        frustrations:
+          - プロフィールだけでは実力が伝わらない
+          - 低品質な依頼者からのスカウトが多い
+
+      - description: エンジニアとの協業機会が限定的
+        severity: medium
+        urgency: medium
+        detail: |
+          デザインだけでなく実装フェーズまで関わりたいが、
+          エンジニアとのつながりが少なく、
+          「デザインだけ作って終わり」になりがち。
+        current_solutions:
+          - Twitterでエンジニアをフォロー
+          - もくもく会に時々参加
+        frustrations:
+          - 一緒に組めるエンジニアを見つけるのが難しい
+          - コミュニティは東京偏重
+
+    match_app_needs:
+      why_use: |
+        手数料なし（またはフェアな料金体系）で、
+        自分のスキルレベルに合った案件や協業パートナーと出会いたい。
+        AIが自分の実績・スキルを理解して推薦してくれるなら、
+        ミスマッチの少ない良質な出会いが期待できる。
+      expected_value:
+        - ポートフォリオ・実績ベースのスキル評価
+        - AI推薦による相性の高いクライアント/パートナーの発見
+        - エンジニアとのチーム組成のきっかけ
+        - 手数料の透明性
+      killer_features:
+        - スキルタグ + 実績による精度の高いマッチング
+        - マッチ度スコアと推薦理由の可視化
+        - ポートフォリオを直接アップロードできるプロフィール
+
+    usage_scenario:
+      trigger: 現在のクラウドソーシング案件が終わりそうで、次の案件を探し始める
+      journey:
+        - step: 認知
+          action: Twitterで「フリーランス マッチング 手数料なし」のポストを見て興味を持つ
+          thought: また新しいサービスか...でも手数料なしは気になる
+          emotion: 半信半疑だが期待
+        - step: 登録
+          action: Googleアカウントで即登録。ポートフォリオURLとスキルタグを設定
+          thought: 登録が楽。Figma作品を見せられるのはいい
+          emotion: 好印象
+        - step: 探索
+          action: AIマッチング推薦で「UI/UXリニューアル」案件を持つスタートアップ経営者が表示される
+          thought: マッチ度85%で理由も書いてある。この人の事業面白そう
+          emotion: ワクワク
+        - step: コンタクト
+          action: マッチリクエストを送信。相手も承認してDMで会話開始
+          thought: 直接やり取りできるの助かる
+          emotion: 安心感
+        - step: 継続
+          action: 月に1-2回、新しいマッチ候補を確認。リピート案件も発生
+          thought: 紹介経由と同じ質の出会いがオンラインでできている
+          emotion: 満足・信頼
+
+    psychological_barriers:
+      - barrier: また手数料を後から取られるのでは
+        mitigation: 料金体系をLP・登録画面で明示。無料枠の存在を強調
+      - barrier: 登録しても良い案件/人がいなければ時間の無駄
+        mitigation: 登録直後にAI推薦のサンプル結果を見せる（Cold Start対策）
+      - barrier: 個人情報やポートフォリオの悪用が心配
+        mitigation: プライバシー設定の粒度を細かくし、公開範囲を制御可能に
+
+  # ────────────────────────────────────────────────
+  # ペルソナ2: 独立コンサルタント
+  # ────────────────────────────────────────────────
+  - id: persona-2
+    role: consultant
+    name: 藤井 雅人（ふじい まさと）
+    tagline: 大企業の看板なしで自分の専門性を証明したい、元戦略コンサルタント
+
+    demographics:
+      age: 43
+      gender: male
+      occupation: 独立経営コンサルタント（DX・業務改善領域）
+      annual_income_range: 800万〜1,200万円
+      location: 東京都港区（コワーキングスペース利用）
+      family: 妻、子ども2人（小学生）
+      education: 慶應義塾大学 経済学部卒 → 米国MBA
+      career_history: |
+        外資系コンサル（Accenture）10年 → 事業会社CDO 3年
+        → 独立2年目。DX戦略策定・PMO支援が専門
+
+    lifestyle:
+      weekday: |
+        6:30 起床 → 日経・NewsPicks確認
+        8:00-9:00 子どもを学校に送った後コワーキングへ
+        9:00-12:00 クライアントワーク（資料作成・分析）
+        13:00-17:00 クライアント先でのワークショップ・MTG
+        18:00-19:00 提案書作成・営業活動
+        20:00 帰宅・家族との時間
+      weekend: 子どもの習い事送迎、ゴルフ（月1）、経営者勉強会（隔月）
+      devices:
+        - MacBook Air M3（メイン）
+        - iPhone 15 Pro（連絡・スケジュール管理）
+        - iPad（プレゼン用）
+      sns:
+        primary: [LinkedIn, X/Twitter]
+        secondary: [note, NewsPicks]
+      media: [日経ビジネス, Harvard Business Review, Podcast（経営系）]
+
+    psychographics:
+      work_values:
+        - 経営課題の本質的な解決
+        - クライアント企業の成長への貢献実感
+        - 自分の知見が正当に評価される報酬
+      spending_habits: |
+        ビジネス書・セミナーへの投資は惜しまない。
+        接待交際費も必要経費として割り切っている。
+      self_investment: 月3〜5万円（MBA同窓会、経営者コミュニティ、書籍・研修）
+      career_perspective: |
+        3年以内に年商2,000万円を安定させたい。
+        将来的にはアソシエイトを1-2人雇い、
+        小さなコンサルファームとして成長させる構想。
+      fears:
+        - 大企業の看板がなくなり、信頼を得にくくなったこと
+        - 営業活動に時間を取られ、本来のコンサル業務の質が落ちること
+        - 景気悪化時に真っ先に切られるリスク
+      desired_future: |
+        月に2-3社のクライアントを持ち、
+        各社の経営層と直接対話しながら
+        DX推進の伴走パートナーとして信頼される存在になる
+
+    challenges:
+      - description: 新規クライアント獲得の営業チャネルが限られている
+        severity: high
+        urgency: high
+        detail: |
+          独立後は前職の人脈からの紹介が中心。
+          紹介が途切れると営業の手段がない。
+          コンサルのマッチングサイトは少なく、
+          あっても求人型で自分のような独立コンサルには合わない。
+        current_solutions:
+          - 前職・MBA同窓会ネットワーク（紹介頼み）
+          - LinkedIn発信（反応が薄い）
+          - 経営者勉強会での名刺交換
+        frustrations:
+          - 紹介待ちでは案件の波が激しい
+          - LinkedInは海外向けで日本の中小経営者にリーチしにくい
+          - 既存のマッチングサービスは「人月単価のSES」ばかり
+
+      - description: 自分の専門性を必要としている企業を見つけられない
+        severity: high
+        urgency: medium
+        detail: |
+          DX戦略・業務改善の専門性があるのに、
+          「何でもできるコンサル」として見られがち。
+          本当に自分の専門性が刺さる経営課題を持つ企業と出会いたい。
+        current_solutions:
+          - noteで専門記事を書く
+          - セミナー登壇
+        frustrations:
+          - 発信しても問い合わせに直結しにくい
+          - 専門性で絞り込めるプラットフォームがない
+
+      - description: フリーランスエンジニアとのチーム組成が難しい
+        severity: medium
+        urgency: medium
+        detail: |
+          戦略提案後の実行フェーズでエンジニアが必要になるが、
+          信頼できる技術者を案件ごとに探すのが大変。
+        current_solutions:
+          - 知人エンジニアに都度相談
+          - SES会社経由（マージンが高い）
+        frustrations:
+          - 知人だけでは対応できないスキルがある
+          - SES経由は費用が高く、クライアントの予算に合わない
+
+    match_app_needs:
+      why_use: |
+        自分の専門領域（DX・業務改善）を正確に理解し、
+        その課題を持つ経営者・企業と直接つないでくれるプラットフォーム。
+        AIが「なぜこの企業とマッチするのか」を示してくれれば、
+        営業トークの準備にもなる。
+      expected_value:
+        - 専門領域ベースの精度の高いマッチング
+        - 経営者との直接コンタクト（仲介なし）
+        - 実行フェーズで組めるエンジニア/デザイナーの発見
+        - 実績・資格の可視化による信頼構築
+      killer_features:
+        - 業種 × 課題領域 でのフィルタリング
+        - AI推薦理由の明示（提案書の下地になる）
+        - ロールを横断したチーム組成機能
+
+    usage_scenario:
+      trigger: 現在のクライアント案件が3ヶ月後に終了予定。次の案件を仕込みたい
+      journey:
+        - step: 認知
+          action: LinkedIn広告で「コンサルタント向けAIマッチング」を知る
+          thought: また怪しいマッチングか...でもAIマッチは気になる
+          emotion: 懐疑的
+        - step: 調査
+          action: サービスサイトで事例や仕組みを確認。手数料体系も調べる
+          thought: 紹介型じゃなくてAI推薦型か。推薦理由が見えるのは新しい
+          emotion: 興味
+        - step: 登録
+          action: LinkedInアカウント連携で登録。専門領域・実績・資格を詳細入力
+          thought: プロフィールの粒度が細かく設定できるのは好印象
+          emotion: 前向き
+        - step: マッチング
+          action: AIが「製造業DX推進中のスタートアップ経営者」を推薦。マッチ度90%
+          thought: この会社の課題、まさに自分の専門領域だ
+          emotion: 高揚感
+        - step: 商談
+          action: DM経由でオンラインMTG設定。推薦理由をベースに提案書準備
+          thought: AIの分析が営業の切り口として使える
+          emotion: 実用的な満足感
+
+    psychological_barriers:
+      - barrier: コンサルとしての格が下がる印象（マッチングアプリ＝安売りのイメージ）
+        mitigation: |
+          UIデザインやトーンを「ビジネスマッチング」として洗練させる。
+          ハイクラス感のあるビジュアル・コピーライティング。
+          登録コンサルタントの実績が見える仕組み。
+      - barrier: クライアント側の質が低いのでは
+        mitigation: |
+          企業側も本人確認・事業概要の入力を必須にし、
+          質の担保をアピール。
+      - barrier: 個人の専門領域をAIが正しく理解できるのか疑問
+        mitigation: |
+          スキルタグだけでなく、フリーテキストで専門領域を記述可能に。
+          マッチング結果のフィードバック機能で精度向上を実感させる。
+
+  # ────────────────────────────────────────────────
+  # ペルソナ3: スタートアップ経営者
+  # ────────────────────────────────────────────────
+  - id: persona-3
+    role: business_owner
+    name: 大西 健太（おおにし けんた）
+    tagline: プロダクトを一緒に作る仲間を今すぐ見つけたい、シード期のCEO
+
+    demographics:
+      age: 37
+      gender: male
+      occupation: スタートアップCEO（SaaS系 HRTech）
+      annual_income_range: 400万〜700万円（役員報酬を抑え、資金はプロダクトに投下）
+      location: 東京都渋谷区（WeWork利用）
+      family: 妻（共働き）、子ども1人（2歳）
+      education: 東京大学 工学部卒
+      career_history: |
+        大手SIer 5年 → HRTechスタートアップPM 3年
+        → 自社HRTech SaaSを創業して2年目。
+        シードラウンドで5,000万円調達済み。
+
+    lifestyle:
+      weekday: |
+        7:00 起床 → Slack・GitHub通知確認
+        8:00 保育園送り
+        9:00-12:00 プロダクトロードマップ・採用活動
+        13:00-18:00 投資家MTG・パートナー開拓・顧客ヒアリング
+        19:00 保育園迎え
+        21:00-24:00 コード書き・ドキュメント整備
+      weekend: 家族と公園 → 午後はピッチ資料作成、スタートアップイベント（月1）
+      devices:
+        - MacBook Pro 16インチ（開発・経営両用）
+        - iPhone 15 Pro Max（常時Slack）
+      sns:
+        primary: [X/Twitter, LinkedIn]
+        secondary: [Facebook（スタートアップコミュニティ）]
+      media: [TechCrunch Japan, BRIDGE, Product Hunt, Podcast（SaaS系）]
+
+    psychographics:
+      work_values:
+        - プロダクトで世の中を変える
+        - スピード最優先（完璧より速さ）
+        - 信頼できるチームでの協働
+      spending_habits: |
+        自分への支出は最小限。
+        プロダクトと採用に全リソースを集中。
+        SaaSツール課金には積極的。
+      self_investment: ほぼゼロ（全てプロダクト投資に回す）
+      career_perspective: |
+        3年以内にARR 1億円を達成してSeriesAへ。
+        HR領域のインフラになるプロダクトを作りたい。
+      fears:
+        - 採用が進まずプロダクト開発が止まること
+        - 資金が尽きる前にPMFできないこと
+        - 技術的負債が溜まり取り返しがつかなくなること
+      desired_future: |
+        優秀なエンジニア/デザイナーのチームを持ち、
+        顧客の声に高速でプロダクトを進化させ続けている状態
+
+    challenges:
+      - description: フルタイム採用が追いつかず、副業/外注パートナーが必要
+        severity: high
+        urgency: high
+        detail: |
+          シード期でフルタイムエンジニアの採用は難航。
+          年収800万+ストックオプションでも大手には勝てない。
+          副業エンジニアや業務委託で開発を進めたいが、
+          良い人を見つけるチャネルが限られている。
+        current_solutions:
+          - Wantedly（応募が少ない）
+          - 知人のエンジニアに声をかける（限界）
+          - SES会社（コストが合わない）
+        frustrations:
+          - 応募してくるエンジニアのスキルレベルが判断しにくい
+          - 面談に時間を使いすぎる
+          - SESは月単価80万〜でバーンレートが厳しい
+
+      - description: デザイナーやマーケターなど非技術パートナーも不足
+        severity: medium
+        urgency: high
+        detail: |
+          UIデザイン、LP制作、コンテンツマーケなど
+          CEOが全部やっている状態。
+          得意じゃない領域を任せたいが適任者が見つからない。
+        current_solutions:
+          - Canvaで自作（品質に不安）
+          - Twitterで「デザイナー募集」（反応が薄い）
+        frustrations:
+          - 専門家に頼みたいが予算感が合うか分からない
+          - 単発ではなく継続的に組みたい
+
+      - description: DX知見を持つアドバイザー/コンサルタントが欲しい
+        severity: medium
+        urgency: low
+        detail: |
+          HRTechのドメイン知識や大企業営業の知見が足りない。
+          業界に詳しいコンサルタントに壁打ちしたい。
+        current_solutions:
+          - 投資家に相談（専門外の場合も多い）
+          - Twitterで質問投げる
+        frustrations:
+          - 適切なアドバイザーを見つける仕組みがない
+
+    match_app_needs:
+      why_use: |
+        採用よりも手軽に、でもSESよりも本気度の高い
+        「事業パートナー」を素早く見つけたい。
+        AIが候補者のスキル・実績を分析してマッチ度を出してくれれば、
+        面談前のスクリーニングに使える。
+      expected_value:
+        - スキル・実績ベースの候補者スクリーニング
+        - 副業/業務委託希望者との効率的なマッチング
+        - 予算感（希望単価）の事前すり合わせ
+        - ロール横断（エンジニア × デザイナー × コンサル）での検索
+      killer_features:
+        - AI推薦＋マッチ度スコア（面談の優先順位付けに使う）
+        - スキルタグ × 稼働可能時間 のフィルタリング
+        - プロジェクト掲示板で案件単位の募集
+
+    usage_scenario:
+      trigger: 新機能のフロントエンド開発を3ヶ月で進めたいが、社内リソースが足りない
+      journey:
+        - step: 認知
+          action: スタートアップ仲間から「Match-app使ってる」と聞く
+          thought: Wantedlyより良いかもしれない
+          emotion: 期待
+        - step: 登録
+          action: Google登録 → 会社情報・募集ポジション・予算感を入力
+          thought: 案件ベースで募集できるのは使いやすい
+          emotion: 効率的で好感
+        - step: 検索
+          action: 「React / Next.js / 副業OK / 週20時間〜」でフィルタ検索
+          thought: 候補者が10人出てきた。マッチ度順でソートできるのは便利
+          emotion: 手応え
+        - step: マッチング
+          action: マッチ度上位3人にリクエスト送信。ポートフォリオ確認
+          thought: この人のGitHubコントリビューション、技術力高そう
+          emotion: 信頼感
+        - step: 契約
+          action: DMでスコープ・報酬・期間を合意。プロジェクト開始
+          thought: 面談2回で決まった。採用の1/10のスピード
+          emotion: 大きな安堵
+
+    psychological_barriers:
+      - barrier: 情報漏洩リスク（未公開プロダクト情報を共有する不安）
+        mitigation: NDA機能 or NDAテンプレートのダウンロード提供
+      - barrier: フリーランスの途中離脱リスク
+        mitigation: 過去のマッチング実績・評価（レビュー）の可視化
+      - barrier: ユーザー数が少なくて候補者がいないのでは
+        mitigation: ローンチ時に著名フリーランスのシードユーザー確保。初期はAI推薦のデモを見せる
+
+  # ────────────────────────────────────────────────
+  # ペルソナ4: 中小企業の社長/役員
+  # ────────────────────────────────────────────────
+  - id: persona-4
+    role: business_owner
+    name: 渡辺 正義（わたなべ まさよし）
+    tagline: DXしたいが何から始めればいいか分からない、製造業の二代目社長
+
+    demographics:
+      age: 52
+      gender: male
+      occupation: 中小企業 代表取締役（精密部品製造業）
+      annual_income_range: 1,000万〜1,500万円
+      location: 愛知県名古屋市
+      family: 妻、息子2人（大学生・高校生）
+      education: 名古屋大学 工学部卒
+      career_history: |
+        父の会社に新卒入社 → 工場長10年 → 代表取締役就任8年目
+        従業員80名。自動車部品が主力。売上30億円。
+
+    lifestyle:
+      weekday: |
+        6:00 起床 → 日経新聞（紙）
+        7:30 出社 → 工場巡回
+        8:30-12:00 経営会議・取引先対応
+        13:00-17:00 銀行・商工会議所・顧客訪問
+        18:00 退社 → 経営者仲間との食事（週1-2）
+        21:00 自宅で業界ニュースチェック
+      weekend: ゴルフ（接待含む）、家族との時間、経営セミナー（月1）
+      devices:
+        - Windows PC（会社デスク）
+        - iPhone 14（最低限の連絡）
+        - iPad（会議資料閲覧）
+      sns:
+        primary: [Facebook（経営者グループ）]
+        secondary: [LINE（ほぼプライベート）]
+      media: [日経新聞, 日経ものづくり, 商工会議所の広報誌, NHK]
+
+    psychographics:
+      work_values:
+        - 従業員の雇用を守ること
+        - 取引先との長期的な信頼関係
+        - ものづくりの品質へのこだわり
+      spending_habits: |
+        設備投資は慎重だが必要と判断すれば大きく動く。
+        個人は質素。接待費は必要経費。
+      self_investment: 経営セミナー年2-3回（商工会議所主催中心、費用は会社持ち）
+      career_perspective: |
+        あと10年で息子に事業承継したい。
+        その前にDXで生産性を上げ、
+        次世代が経営しやすい基盤を作る責任がある。
+      fears:
+        - DX対応が遅れて競合に負けること
+        - 若手社員が辞めてしまうこと（古い体質への不満）
+        - ITベンダーに高額なシステムを売りつけられること
+        - 息子が会社を継がないと言い出すこと
+      desired_future: |
+        生産管理・受発注がデジタル化され、
+        若手社員がやりがいを感じて働いている会社。
+        取引先からも「あの会社はDXが進んでる」と評価される状態。
+
+    challenges:
+      - description: DXを推進したいが社内にIT人材がいない
+        severity: high
+        urgency: high
+        detail: |
+          経産省のDXレポートを読んで危機感はある。
+          しかし社内にエンジニアはゼロ。
+          情シスは兼任の事務員1人（Excel管理レベル）。
+          何から手をつければいいか分からない。
+        current_solutions:
+          - 地元のITベンダーに相談（高額見積もりで保留）
+          - 商工会議所のDXセミナーに参加（概論で終わる）
+          - 息子に「ネットで調べて」と頼む
+        frustrations:
+          - ITベンダーの提案が大規模すぎて予算に合わない
+          - 用語が分からず、何を聞けばいいかも分からない
+          - 小さく始められるアドバイザーがいない
+
+      - description: 信頼できる外部専門家を見つける方法がない
+        severity: high
+        urgency: medium
+        detail: |
+          東京のコンサル会社は高い。
+          地方の中小企業の事情を理解してくれる専門家が欲しい。
+          でも、どこで探せばいいか分からない。
+        current_solutions:
+          - 商工会議所の紹介（数が限られる）
+          - 経営者仲間の口コミ（DX経験者が少ない）
+          - Google検索（情報が多すぎて判断できない）
+        frustrations:
+          - 相場感が分からず、ぼったくられないか不安
+          - 契約後に「思ってたのと違う」となるリスク
+          - リモート中心の専門家でも大丈夫なのか不安
+
+      - description: 若手社員の確保・定着
+        severity: medium
+        urgency: medium
+        detail: |
+          「うちの会社、遅れてる」と若手に思われている。
+          デジタル化を進めることで採用面でもアピールしたい。
+        current_solutions:
+          - ハローワーク・地元求人誌
+          - 大学の就職課への求人票
+        frustrations:
+          - 製造業は若者に人気がない
+          - DX推進を採用に活かしたいが、まだ何も進んでいない
+
+    match_app_needs:
+      why_use: |
+        ITの知識が乏しい自分でも使えるシンプルなUIで、
+        「製造業 × DX」の知見を持つ専門家を見つけたい。
+        AIが「この人があなたの課題に合います」と
+        分かりやすく教えてくれるなら、判断の助けになる。
+      expected_value:
+        - IT知識なしでも使える直感的なUI
+        - 業種 × 課題領域 での専門家検索
+        - AI推薦理由が日本語で分かりやすく表示される
+        - 専門家の実績・評価が見えて安心できる
+        - 地方からでもリモートで専門家に相談できる
+      killer_features:
+        - 「何に困っているか」を選択肢から選ぶだけで専門家が提案される
+        - マッチ度スコアの根拠が平易な日本語で表示
+        - 初回相談無料のような仕組み（心理的ハードル低減）
+
+    usage_scenario:
+      trigger: 商工会議所のDXセミナーで「まず外部専門家に相談を」と言われた
+      journey:
+        - step: 認知
+          action: セミナー後の交流会で他の社長から「Match-appでコンサル見つけた」と聞く
+          thought: ネットのサービスか...自分に使えるかな
+          emotion: 不安だが興味
+        - step: 家族に相談
+          action: 息子に「こういうサービスがあるんだけど」と見せる
+          thought: 息子が「ちゃんとしたサービスだよ」と言ってくれた
+          emotion: 安心
+        - step: 登録
+          action: メールアドレスで登録。業種・従業員数・困っていることを選択式で入力
+          thought: 選択肢から選ぶだけだから簡単だ
+          emotion: ほっとした
+        - step: AI推薦
+          action: 「製造業DX支援」の実績がある独立コンサルタントが3名表示
+          thought: この人、うちと同じ規模の製造業を何社も支援してるな
+          emotion: 期待と安堵
+        - step: 相談
+          action: まずDMで「何から始めればいいですか」と質問
+          thought: 丁寧に答えてくれた。この人なら相談できそうだ
+          emotion: 信頼
+
+    psychological_barriers:
+      - barrier: ITサービス自体への不信感・操作の不安
+        mitigation: |
+          登録フローを最小限に。選択式UIで入力負荷を下げる。
+          電話サポート窓口の設置（将来的に検討）。
+      - barrier: 費用が不透明で高額になるのでは
+        mitigation: |
+          専門家側のプロフィールに「目安単価」を表示。
+          「まず相談だけ」が可能な仕組み。
+      - barrier: リモート専門家を信頼できるか
+        mitigation: |
+          実績・レビュー・資格の可視化。
+          初回ビデオ通話での顔合わせ推奨。
+          同業種の支援実績を強調。
+
+# ────────────────────────────────────────────────
+# ペルソナ横断分析
+# ────────────────────────────────────────────────
+
+cross_analysis:
+  priority_ranking:
+    - rank: 1
+      persona_id: persona-1
+      rationale: |
+        フリーランスはプラットフォームの供給側として最重要。
+        数が多く、手数料不満という明確なスイッチ動機がある。
+        初期のユーザー獲得がしやすいセグメント。
+
+    - rank: 2
+      persona_id: persona-3
+      rationale: |
+        スタートアップ経営者は需要側として最重要。
+        パートナー探しの切迫感が高く、意思決定が速い。
+        成功事例ができればSNSでの拡散も期待できる。
+
+    - rank: 3
+      persona_id: persona-2
+      rationale: |
+        独立コンサルタントは高単価の供給側。
+        プラットフォームの質を担保する存在。
+        ただしリテラシーが高く目が厳しいため、
+        サービスの完成度が一定以上必要。
+
+    - rank: 4
+      persona_id: persona-4
+      rationale: |
+        中小企業経営者は潜在市場が巨大だが、
+        ITリテラシーの壁があり獲得コストが高い。
+        サービス成熟後に本格的にアプローチするセグメント。
+
+  common_pain_points:
+    - id: cp-1
+      description: 信頼できるパートナーとの出会いの場がない
+      affected_personas: [persona-1, persona-2, persona-3, persona-4]
+      severity: high
+      match_app_solution: |
+        AI推薦 + 実績/ポートフォリオベースの信頼構築で、
+        「紹介に近い質」をオンラインで実現する
+
+    - id: cp-2
+      description: 既存サービスの手数料・コスト構造への不満
+      affected_personas: [persona-1, persona-2, persona-3]
+      severity: high
+      match_app_solution: |
+        透明でフェアな料金体系。
+        ポートフォリオとしての開発のため、当面は無料で提供。
+
+    - id: cp-3
+      description: スキル/専門性のミスマッチ
+      affected_personas: [persona-1, persona-2, persona-3, persona-4]
+      severity: high
+      match_app_solution: |
+        AIがスキルタグ・実績・課題領域を多次元で分析し、
+        マッチ度スコア+推薦理由で「なぜこの人か」を説明する
+
+    - id: cp-4
+      description: 質の担保（相手が信頼できるか分からない）
+      affected_personas: [persona-1, persona-2, persona-3, persona-4]
+      severity: medium
+      match_app_solution: |
+        実績・ポートフォリオ・レビュー評価の可視化。
+        本人確認の仕組み。
+
+  chicken_and_egg_strategy:
+    description: |
+      マッチングプラットフォームの鶏と卵問題への対策。
+      供給側（フリーランス・コンサル）を先に集め、
+      需要側（経営者）に「すぐ見つかる」体験を提供する。
+    phase_1_supply:
+      target: persona-1（フリーランス）
+      tactics:
+        - 手数料なしを前面に訴求
+        - SNS（Twitter/note）経由でフリーランスコミュニティにリーチ
+        - ポートフォリオ掲載ツールとしての価値も訴求
+    phase_2_demand:
+      target: persona-3（スタートアップ経営者）
+      tactics:
+        - スタートアップコミュニティで口コミ
+        - 「AIが最適な人材を推薦」のUXを体験させるデモ
+        - 初期マッチング成功事例の発信
+    phase_3_expansion:
+      target: persona-2, persona-4
+      tactics:
+        - 実績・事例の蓄積後にLinkedIn/経営者コミュニティへ展開
+        - 中小企業向けは商工会議所等のオフラインチャネルも活用
