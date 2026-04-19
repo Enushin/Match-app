@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Avatar, RoleBadge, Card, CardContent, Button } from "@/components/ui";
 import {
   MapPin,
@@ -9,6 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { sampleUsers } from "@/lib/data/sample";
+import { images } from "@/lib/images/unsplash";
 
 export default function ProfilePage() {
   const user = sampleUsers[2]; // 大西健太
@@ -34,7 +36,10 @@ export default function ProfilePage() {
     <div className="space-y-8">
       {/* Cover + Avatar */}
       <div className="relative">
-        <div className="h-32 rounded-2xl bg-gradient-to-r from-primary-500 to-primary-700 sm:h-40" />
+        <div className="relative h-48 overflow-hidden rounded-2xl sm:h-56">
+          <Image src={images.profileCover} alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-primary-900/40" />
+        </div>
         <div className="absolute -bottom-12 left-6 sm:left-8">
           <div className="rounded-full border-4 border-white bg-white">
             <Avatar name={user.name} size="xl" />
@@ -127,35 +132,42 @@ export default function ProfilePage() {
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
             実績・ポートフォリオ
           </h2>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {[
               {
                 title: "HRTech SaaS 'TeamFlow'",
                 desc: "人事評価・1on1管理SaaS。React/Next.jsで構築。月間アクティブユーザー500社。",
-                url: "#",
+                image: images.portfolio[0],
               },
               {
                 title: "採用管理ダッシュボード",
                 desc: "応募者トラッキング・面接スケジュール管理。リアルタイム分析機能搭載。",
-                url: "#",
+                image: images.portfolio[1],
               },
             ].map((project) => (
               <div
                 key={project.title}
-                className="rounded-xl border border-neutral-200 p-4 transition-colors hover:border-primary-200"
+                className="group overflow-hidden rounded-xl border border-neutral-200 transition-all hover:border-primary-200 hover:shadow-md"
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2">
-                    <FileText className="h-4 w-4 text-neutral-400" />
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-start justify-between">
                     <h3 className="text-sm font-semibold text-neutral-900">
                       {project.title}
                     </h3>
+                    <ExternalLink className="h-3.5 w-3.5 shrink-0 text-neutral-300" />
                   </div>
-                  <ExternalLink className="h-3.5 w-3.5 text-neutral-300" />
+                  <p className="mt-2 text-xs leading-relaxed text-neutral-500">
+                    {project.desc}
+                  </p>
                 </div>
-                <p className="mt-2 text-xs leading-relaxed text-neutral-500">
-                  {project.desc}
-                </p>
               </div>
             ))}
           </div>

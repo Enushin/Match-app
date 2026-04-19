@@ -143,9 +143,11 @@ export default function DashboardPage() {
                   <Button size="sm" className="flex-1">
                     マッチリクエスト
                   </Button>
-                  <Button variant="secondary" size="sm">
-                    詳細
-                  </Button>
+                  <Link href={`/profile?id=${rec.userId}`}>
+                    <Button variant="secondary" size="sm">
+                      詳細
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

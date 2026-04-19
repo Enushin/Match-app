@@ -1,4 +1,5 @@
 import type { UserProfile, MatchRequest, AIMatchRecommendation, ProjectListing } from "@/types";
+import { images } from "@/lib/images/unsplash";
 
 export const sampleUsers: UserProfile[] = [
   {
@@ -10,7 +11,7 @@ export const sampleUsers: UserProfile[] = [
     bio: "制作会社→事業会社を経てフリーランス4年目。Figmaを中心にUI設計からプロトタイプまで一貫して対応。ユーザー体験の質にこだわります。",
     skills: ["Figma", "UI/UX", "Webデザイン", "プロトタイプ", "ユーザーリサーチ"],
     location: "東京都",
-    avatarUrl: null,
+    avatarUrl: images.avatars[0],
     createdAt: new Date("2026-01-15"),
     updatedAt: new Date("2026-04-01"),
   },
@@ -23,7 +24,7 @@ export const sampleUsers: UserProfile[] = [
     bio: "Accenture10年→事業会社CDO→独立。製造業・小売業のDX戦略策定とPMO支援が専門。100社以上の支援実績。",
     skills: ["DX戦略", "PMO", "業務改善", "データ分析", "経営企画"],
     location: "東京都",
-    avatarUrl: null,
+    avatarUrl: images.avatars[1],
     createdAt: new Date("2026-02-01"),
     updatedAt: new Date("2026-04-10"),
   },
@@ -36,7 +37,7 @@ export const sampleUsers: UserProfile[] = [
     bio: "大手SIer→HRTechスタートアップPM→自社創業。シードラウンドで資金調達済み。React/TypeScriptも書けるCEO。",
     skills: ["経営", "プロダクトマネジメント", "React", "TypeScript", "採用"],
     location: "東京都",
-    avatarUrl: null,
+    avatarUrl: images.avatars[2],
     createdAt: new Date("2026-01-20"),
     updatedAt: new Date("2026-04-15"),
   },
@@ -49,7 +50,7 @@ export const sampleUsers: UserProfile[] = [
     bio: "父の会社を引き継ぎ8年。従業員80名の精密部品製造業。DX推進で生産性向上と若手定着を目指している。",
     skills: ["経営", "製造業", "品質管理", "ISO", "事業承継"],
     location: "愛知県",
-    avatarUrl: null,
+    avatarUrl: images.avatars[3],
     createdAt: new Date("2026-03-01"),
     updatedAt: new Date("2026-04-18"),
   },
@@ -62,7 +63,7 @@ export const sampleUsers: UserProfile[] = [
     bio: "React/Next.js/TypeScriptを中心としたWebアプリケーション開発が得意。AWS環境構築からCI/CDまで一貫対応。副業でスタートアップ支援中。",
     skills: ["React", "Next.js", "TypeScript", "AWS", "PostgreSQL", "Node.js"],
     location: "大阪府",
-    avatarUrl: null,
+    avatarUrl: images.avatars[4],
     createdAt: new Date("2026-01-10"),
     updatedAt: new Date("2026-04-12"),
   },
@@ -75,7 +76,7 @@ export const sampleUsers: UserProfile[] = [
     bio: "大手広告代理店→独立。BtoB SaaSのマーケティング戦略立案からコンテンツ制作、広告運用まで。Google Ads認定資格保有。",
     skills: ["マーケティング戦略", "コンテンツマーケ", "Google Ads", "SEO", "データ分析"],
     location: "東京都",
-    avatarUrl: null,
+    avatarUrl: images.avatars[5],
     createdAt: new Date("2026-02-15"),
     updatedAt: new Date("2026-04-16"),
   },

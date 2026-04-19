@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, Avatar, RoleBadge, AIBadge, Button, Input } from "@/components/ui";
 import { Search, Sparkles, SlidersHorizontal, MapPin, Clock } from "lucide-react";
 import { sampleUsers } from "@/lib/data/sample";
@@ -171,9 +172,11 @@ export default function SearchPage() {
                   <Button size="sm" className="flex-1">
                     マッチリクエスト
                   </Button>
-                  <Button variant="secondary" size="sm">
-                    詳細
-                  </Button>
+                  <Link href={`/profile?id=${user.id}`}>
+                    <Button variant="secondary" size="sm">
+                      詳細
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
