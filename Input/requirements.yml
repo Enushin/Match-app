@@ -1,0 +1,111 @@
+project:
+  name: Match-app
+  type: web-application
+  description: フリーランス・コンサルタント・経営者向け事業マッチングプラットフォーム
+  phase: P0-SDK-Init
+
+vision:
+  statement: AIが最適な事業パートナーを見つける、誰でも使えるマッチングプラットフォーム
+  target_users:
+    - type: freelancer
+      description: 案件獲得・スキルマッチングを求めるフリーランス
+    - type: consultant
+      description: クライアント開拓・専門領域マッチングを求めるコンサルタント
+    - type: business_owner
+      description: パートナー探し・外注先発見・事業提携を求める経営者
+
+features:
+  authentication:
+    priority: P0
+    description: ユーザー認証・認可
+    requirements:
+      - メール + パスワード登録/ログイン
+      - OAuth (Google, GitHub)
+      - プロフィール設定
+
+  user_profile:
+    priority: P0
+    description: ユーザープロフィール管理
+    requirements:
+      - 基本情報 (名前, 肩書き, 自己紹介)
+      - ロール選択 (フリーランス / コンサルタント / 経営者 / 複数可)
+      - スキルタグ
+      - 実績・ポートフォリオ
+      - マッチング条件設定
+
+  matching:
+    priority: P0
+    description: マッチング機能
+    requirements:
+      - 検索・フィルタリング (ロール, スキル, 地域, 業種)
+      - マッチング候補一覧表示
+      - マッチリクエスト送受信
+      - マッチ成立通知
+
+  ai_matching:
+    priority: P1
+    description: AIマッチング推薦
+    requirements:
+      - プロフィール・実績ベースの類似度スコアリング
+      - マッチ度 + 推薦理由の提示
+      - ユーザーフィードバックによる精度改善
+      - AI推薦モード ON/OFF 切替
+
+  messaging:
+    priority: P1
+    description: メッセージ機能
+    requirements:
+      - マッチ成立後のダイレクトメッセージ
+      - リアルタイム通知
+      - 既読管理
+
+  project_board:
+    priority: P2
+    description: 案件掲示板
+    requirements:
+      - 案件投稿 (タイトル, 説明, 予算, 期間, 必要スキル)
+      - 案件検索・応募
+      - 応募管理
+
+non_functional:
+  performance:
+    - 初期表示 < 2秒 (LCP)
+    - マッチング検索 < 500ms
+  security:
+    - Better Auth v1 (認証)
+    - RBAC (ロールベースアクセス制御)
+    - 個人情報暗号化
+  scalability:
+    - Server Components (SSR/SSG)
+    - PostgreSQL (水平スケーリング可能)
+  accessibility:
+    - WCAG 2.1 AA 準拠
+    - モバイルファースト
+
+tech_stack:
+  framework: Next.js 16 (App Router)
+  language: TypeScript (strict)
+  styling: Tailwind CSS v4
+  database: PostgreSQL + Drizzle ORM
+  auth: Better Auth v1
+  state: Zustand
+  validation: Zod v4
+  testing: Vitest + Testing Library
+  ai: Gemini / Claude API (P1)
+
+milestones:
+  - id: MS-P0
+    name: SDK Init Ready
+    criteria: tsc 0 errors, tests PASS, build SUCCESS
+  - id: MS-P1
+    name: Auth + Profile MVP
+    criteria: 認証・プロフィール作成が動作
+  - id: MS-P2
+    name: Matching MVP
+    criteria: 検索・マッチリクエストが動作
+  - id: MS-P3
+    name: AI Matching
+    criteria: AI推薦が動作
+  - id: MS-P4
+    name: Beta Release
+    criteria: メッセージ + 案件掲示板 + E2Eテスト
