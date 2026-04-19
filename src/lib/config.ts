@@ -1,3 +1,4 @@
+import "server-only";
 import { z } from "zod/v4";
 
 const envSchema = z.object({

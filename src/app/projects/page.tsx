@@ -45,7 +45,7 @@ export default function ProjectsPage() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span
-                        className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${
+                        className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                           project.status === "open"
                             ? "bg-green-50 text-green-700"
                             : project.status === "in_progress"
@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                       <p className="text-xs font-medium text-neutral-900">
                         {owner.name}
                       </p>
-                      <p className="text-[10px] text-neutral-400">
+                      <p className="text-xs text-neutral-400">
                         {owner.title}
                       </p>
                     </div>

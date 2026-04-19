@@ -62,7 +62,7 @@ export default function MessagesPage() {
               </div>
 
               {conv.unread > 0 && (
-                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-500 px-1.5 text-[10px] font-bold text-white">
+                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-500 px-1.5 text-xs font-bold text-white">
                   {conv.unread}
                 </span>
               )}

@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react";
+import { USER_ROLE_LABELS } from "@/lib/constants";
 
 type BadgeVariant = "freelancer" | "consultant" | "business_owner" | "ai" | "default";
 
@@ -12,12 +13,6 @@ const variantStyles: Record<BadgeVariant, string> = {
   business_owner: "bg-green-50 text-green-700 border-green-200",
   ai: "bg-ai-bg text-ai border-ai/20",
   default: "bg-neutral-100 text-neutral-600 border-neutral-200",
-};
-
-const roleLabels: Record<string, string> = {
-  freelancer: "フリーランス",
-  consultant: "コンサルタント",
-  business_owner: "経営者",
 };
 
 export function Badge({
@@ -43,7 +38,7 @@ export function RoleBadge({ role }: { role: string }) {
       : "default"
   ) as BadgeVariant;
 
-  return <Badge variant={variant}>{roleLabels[role] ?? role}</Badge>;
+  return <Badge variant={variant}>{USER_ROLE_LABELS[role] ?? role}</Badge>;
 }
 
 export function AIBadge({ score, className = "" }: { score: number; className?: string }) {
@@ -55,6 +50,7 @@ export function AIBadge({ score, className = "" }: { score: number; className?: 
         viewBox="0 0 24 24"
         fill="currentColor"
         className="shrink-0"
+        aria-hidden="true"
       >
         <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4 5.6 21.2 8 14 2 9.2h7.6z" />
       </svg>

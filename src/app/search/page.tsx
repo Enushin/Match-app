@@ -58,7 +58,8 @@ export default function SearchPage() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
           <input
-            type="text"
+            type="search"
+            aria-label="パートナーを検索"
             placeholder="スキル、職種、キーワードで検索..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -131,13 +132,13 @@ export default function SearchPage() {
                   {user.skills.slice(0, 4).map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-md bg-neutral-100 px-2 py-0.5 text-[11px] text-neutral-600"
+                      className="rounded-md bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600"
                     >
                       {skill}
                     </span>
                   ))}
                   {user.skills.length > 4 && (
-                    <span className="text-[11px] text-neutral-400">
+                    <span className="text-xs text-neutral-400">
                       +{user.skills.length - 4}
                     </span>
                   )}
@@ -157,7 +158,7 @@ export default function SearchPage() {
                   </div>
                 )}
 
-                <div className="mt-3 flex items-center gap-4 text-[11px] text-neutral-400">
+                <div className="mt-3 flex items-center gap-4 text-xs text-neutral-400">
                   {user.location && (
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />

@@ -45,7 +45,7 @@ export default function DashboardPage() {
                   {stat.value}
                 </p>
                 <p className="text-xs text-neutral-500">{stat.label}</p>
-                <p className="mt-0.5 text-[10px] text-success">{stat.change}</p>
+                <p className="mt-0.5 text-xs text-success">{stat.change}</p>
               </div>
             </CardContent>
           </Card>
@@ -98,13 +98,13 @@ export default function DashboardPage() {
                   {rec.user.skills.slice(0, 4).map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-md bg-neutral-100 px-2 py-0.5 text-[11px] text-neutral-600"
+                      className="rounded-md bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600"
                     >
                       {skill}
                     </span>
                   ))}
                   {rec.user.skills.length > 4 && (
-                    <span className="text-[11px] text-neutral-400">
+                    <span className="text-xs text-neutral-400">
                       +{rec.user.skills.length - 4}
                     </span>
                   )}
@@ -112,7 +112,7 @@ export default function DashboardPage() {
 
                 {/* AI Reasons */}
                 <div className="mt-4 rounded-lg bg-ai-bg/50 p-3">
-                  <p className="mb-1.5 text-[10px] font-medium uppercase tracking-wider text-ai">
+                  <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-ai">
                     推薦理由
                   </p>
                   <ul className="space-y-1">
@@ -190,7 +190,7 @@ export default function DashboardPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span
-                      className={`rounded-full px-2.5 py-0.5 text-[11px] font-medium ${
+                      className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
                         match.status === "accepted"
                           ? "bg-green-50 text-green-700"
                           : match.status === "pending"
@@ -204,7 +204,7 @@ export default function DashboardPage() {
                           ? "承認待ち"
                           : "辞退"}
                     </span>
-                    <span className="flex items-center gap-1 text-[11px] text-neutral-400">
+                    <span className="flex items-center gap-1 text-xs text-neutral-400">
                       <Clock className="h-3 w-3" />
                       {match.createdAt.toLocaleDateString("ja-JP", {
                         month: "short",

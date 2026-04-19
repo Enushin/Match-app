@@ -15,19 +15,19 @@ export function Footer() {
           <nav className="flex items-center gap-6">
             <a
               href="#"
-              className="text-sm text-neutral-400 transition-colors hover:text-neutral-600"
+              className="text-sm text-neutral-500 transition-colors hover:text-neutral-800"
             >
               利用規約
             </a>
             <a
               href="#"
-              className="text-sm text-neutral-400 transition-colors hover:text-neutral-600"
+              className="text-sm text-neutral-500 transition-colors hover:text-neutral-800"
             >
               プライバシーポリシー
             </a>
             <a
               href="#"
-              className="text-sm text-neutral-400 transition-colors hover:text-neutral-600"
+              className="text-sm text-neutral-500 transition-colors hover:text-neutral-800"
             >
               お問い合わせ
             </a>

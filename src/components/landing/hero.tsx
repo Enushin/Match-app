@@ -104,7 +104,7 @@ export function Hero() {
                       {person.name}
                     </p>
                     <span
-                      className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${person.color}`}
+                      className={`mt-1 inline-block rounded-full px-2 py-0.5 text-xs font-medium ${person.color}`}
                     >
                       {person.role}
                     </span>
@@ -118,7 +118,7 @@ export function Hero() {
                           style={{ width: `${person.score}%` }}
                         />
                       </div>
-                      <span className="text-[10px] font-medium text-ai">
+                      <span className="text-xs font-medium text-ai">
                         {person.score}%
                       </span>
                     </div>

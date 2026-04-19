@@ -13,7 +13,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       ? "shadow-md hover:shadow-lg hover:-translate-y-0.5"
       : "shadow-sm hover:shadow-md hover:-translate-y-0.5";
     const aiStyles = ai
-      ? "border-l-3 border-l-ai bg-ai-bg"
+      ? "border-l-[3px] border-l-ai bg-ai-bg"
       : "border border-neutral-200";
 
     return (
